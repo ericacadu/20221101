@@ -1,0 +1,29 @@
+nav {
+  font-family: 'cwTeXYen', 'Mitr', sans-serif;
+  background: var(--primary);
+  z-index: 9;
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 var(--gutter);
+  }
+
+  a {
+    color: var(--primary);
+    font-size: 1.25rem;
+    font-weight: 800;
+    background: var(--red);
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+  }
+}
+
+@media (min-width: 720px) {
+  nav {
+    a {
+      padding: 0.5rem 1rem;
+    }
+  }
+}

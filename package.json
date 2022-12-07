@@ -1,0 +1,28 @@
+{
+  "name": "gash221101",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "rm -rf dist/ & npm run sass & rollup -c -w",
+    "build": "rm -rf dist/ && rollup -c && npm run sass",
+    "deploy": "sh deploy.sh",
+    "sass": "sass --no-source-map src/css:dist/css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npm run lint-js",
+    "lint-js": "npx prettier --check .",
+    "prettier": "npx prettier --write ."
+  },
+  "devDependencies": {
+    "@rollup/plugin-json": "^5.0.2",
+    "prettier": "^2.8.0",
+    "rollup": "^3.5.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.56.1"
+  },
+  "dependencies": {
+    "serve": "^14.1.2"
+  }
+}

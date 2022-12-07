@@ -1,0 +1,293 @@
+header {
+  background: #C7402C url('../images/bg-pattern-01.png') repeat 0 0;
+  background-size: calc(100vw/5) auto;
+  background-attachment: fixed;
+  padding: var(--gutter);
+  position: relative;
+
+  .logo {
+    width: calc(100vw/5);
+    max-width: 140px;
+  }
+
+  .banner {
+    background: var(--primary);
+    padding: calc(var(--gutter) / 2) 0 var(--gutter);
+    border-radius: calc(var(--gutter) * 1.25);
+    position: relative;
+    z-index: 2;
+
+    &-kv {
+      width: calc(100% + var(--gutter));
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, -5vmax);
+      z-index: 2;
+      margin-bottom: -4vmax;
+    }
+
+    &-title {
+      width: calc(90% - var(--gutter));
+      margin: 0 auto;
+    }
+  }
+
+
+}
+
+.lantern {
+  position: absolute;
+  width: calc(100% - var(--gutter) * 2);
+  top: var(--gutter);
+  z-index: 1;
+  display: none;
+  pointer-events: none;
+
+  img {
+    width: 25vmax;
+    position: absolute;
+    left: 0;
+
+    +img {
+      transform: scaleX(-1);
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+.flower,
+.cloud {
+  pointer-events: none;
+
+  >div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
+
+.flower {
+  span {
+    width: 4.5vw;
+    height: 4.5vw;
+    max-width: 35px;
+    max-height: 35px;
+    position: absolute;
+    z-index: 2;
+    display: none;
+  }
+
+  &-1 span {
+    background: url('../images/ico-flower-01.png') no-repeat 50% 50%;
+    background-size: contain;
+    animation: roll 3s linear infinite;
+
+    &:nth-child(1) {
+      top: 50%;
+      left: -15%;
+    }
+
+    &:nth-child(2) {
+      display: block;
+      top: calc(var(--gutter) * -2);
+      left: 30%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &-2 span {
+    background: url('../images/ico-flower-02.png') no-repeat 50% 50%;
+    background-size: contain;
+    animation: roll 2.5s reverse linear infinite;
+
+    &:nth-child(1) {
+      display: block;
+      left: 5%;
+      top: 15%;
+    }
+
+    &:nth-child(2) {
+      right: -20%;
+      top: 30%;
+    }
+
+    &:nth-child(3) {
+      right: -15%;
+      top: 80%;
+    }
+  }
+
+  &-3 span {
+    background: url('../images/ico-flower-03.png') no-repeat 50% 50%;
+    background-size: contain;
+    right: -12.5%;
+    top: 42.5%;
+    animation: roll 4s linear infinite;
+  }
+
+}
+
+.cloud {
+  span {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    display: none;
+  }
+
+  &-1 span {
+    background: url(../images/ico-cloud-01.png) no-repeat 50% 0%;
+    background-size: 100%;
+
+    &:nth-child(1) {
+      display: block;
+      right: -2.5%;
+      top: 5%;
+
+    }
+  }
+
+  &-2 span {
+    background: url(../images/ico-cloud-02.png) no-repeat 50% 0%;
+    background-size: 100%;
+    transform: scale(0.8);
+
+    &:nth-child(1) {
+      display: block;
+      left: 5%;
+      bottom: -13%;
+    }
+  }
+}
+
+
+@media (min-width: 720px) {
+  html {
+    --gutter: 40px;
+  }
+
+  header {
+    background-size: calc(100vw/8) auto;
+    padding-bottom: calc(var(--gutter) * 6);
+
+    .logo {
+      width: calc(100vw/8);
+    }
+
+    .banner {
+      margin-top: var(--gutter);
+      padding-bottom: calc(var(--gutter) * 2);
+      border-radius: calc(var(--gutter) * 2);
+
+      &-kv {
+        width: calc(100% + var(--gutter) * 2);
+      }
+
+      &-title {
+        width: calc(80% - var(--gutter));
+      }
+    }
+
+
+  }
+
+  .lantern {
+    display: block;
+  }
+
+  .flower,
+  .cloud {
+    span {
+      display: block;
+    }
+  }
+
+  .flower {
+    &-1 span {
+      &:nth-child(2) {
+        top: calc(var(--gutter) * -3);
+        left: 25%;
+      }
+    }
+
+    &-2 span {
+      width: 4.5vw * 0.5;
+      height: 4.5vw * 0.5;
+    }
+  }
+
+  .cloud {
+    span {
+      width: 150px;
+      height: 75px;
+    }
+
+    &-1 span {
+      &:nth-child(1) {
+        animation: cloud1move 20s alternate linear infinite;
+      }
+
+      &:nth-child(2) {
+        width: 100px;
+        height: 50px;
+        animation: cloud1move 8s alternate linear infinite;
+        bottom: 10%;
+        left: -5%;
+      }
+
+      &:nth-child(3) {
+        right: -15%;
+        top: 55%;
+        animation: cloud2move 16s alternate-reverse linear infinite;
+      }
+    }
+
+    &-2 span {
+      &:nth-child(1) {
+        bottom: -20%;
+        animation: cloud2move 12s alternate-reverse linear infinite;
+      }
+
+      &:nth-child(2) {
+        right: -15%;
+        bottom: -8%;
+        animation: cloud2move 10s alternate linear infinite;
+
+      }
+    }
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cloud1move {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes cloud2move {
+  0% {
+    transform: scale(0.8) translateX(-50%);
+  }
+
+  100% {
+    transform: scale(0.8) translateX(50%);
+  }
+}
