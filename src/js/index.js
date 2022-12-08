@@ -15,3 +15,19 @@ lanterns.forEach((item) => {
     setTimeout(removeSwing, swingTime);
   });
 });
+
+const toggleSticky = (flag) => $("nav").classList.toggle("sticky", flag);
+const toggleBounce = (flag) =>
+  $(".shop-rabbit").classList.toggle("bounceInUp", flag);
+
+function watch(target, fn) {
+  const observer = new IntersectionObserver(fn);
+  observer.observe(target);
+}
+
+watch($(".shop"), (entries) => {
+  entries.forEach((entry) => toggleBounce(entry.isIntersecting));
+});
+watch($("header"), (entries) => {
+  entries.forEach((entry) => toggleSticky(!entry.isIntersecting));
+});

@@ -1,0 +1,63 @@
+.store-1 {
+  background: url(../images/bg-store-mb.jpg) no-repeat center center;
+  background-size: cover;
+
+  .info1 {
+    .info-img {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+  .info2 {
+    .info-img img {
+      transform-origin: bottom center;
+      animation: swing 2.5s infinite ease-in-out;
+    }
+  }
+
+  .fireworks {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+
+    span {
+      display: block;
+      width: 15vw;
+      height: 15vw;
+      max-width: 200px;
+      max-height: 200px;
+      background: url(../images/ico-firework.png) no-repeat 50% 50%;
+      background-size: contain;
+      position: absolute;
+
+      &:nth-child(1) {
+        right: -25%;
+        top: 15%;
+        opacity: 0;
+        animation: firework 3s ease-in-out infinite;
+      }
+
+      &:nth-child(2) {
+        left: -25%;
+        top: 55%;
+        opacity: 0;
+        animation: firework 3s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+    }
+  }
+}
+
+@media (min-width: 720px) {
+  .store-1 {
+    background: url(../images/bg-store.jpg) no-repeat center center;
+    background-size: cover;
+  }
+
+}

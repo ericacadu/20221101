@@ -8,7 +8,7 @@
     "dev": "rm -rf dist/ & npm run sass & rollup -c -w",
     "build": "rm -rf dist/ && rollup -c && sass --no-source-map src/css:dist/css",
     "deploy": "sh deploy.sh",
-    "sass": "sass --no-source-map src/css:dist/css --watch",
+    "sass": "sass --no-source-map .:. --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npm run lint-js",
     "lint-js": "npx prettier --check .",

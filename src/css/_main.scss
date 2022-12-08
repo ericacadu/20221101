@@ -3,10 +3,12 @@
   --frame-line: 2px;
   --frame-color: white;
   --swing-time: 1000;
-  --tiger-transform: translateX(-335%);
+
 }
 
 main {
+  background: var(--darkred);
+
   section {
     padding-left: var(--gutter);
     padding-right: var(--gutter);
@@ -57,13 +59,13 @@ main {
     margin: 0;
     padding-top: var(--frame-gap);
     padding-bottom: calc(var(--frame-gap) / 2);
-    padding-right: var(--frame-gap);
+    padding-right: calc(var(--frame-gap) * 0.6);
     border-left: var(--frame-line) solid var(--frame-color);
     border-right: var(--frame-line) solid var(--frame-color);
   }
 
   ul {
-    padding-left: var(--frame-gap);
+    padding-left: calc(var(--frame-gap) * 0.6);
   }
 
   li {
@@ -123,277 +125,6 @@ main {
   }
 }
 
-.store-1 {
-  background: url(../images/bg-store-mb.jpg) no-repeat center center;
-  background-size: cover;
-
-  .info1 {
-    .info-img {
-      width: 70%;
-      margin: 0 auto;
-    }
-  }
-
-  .info2 {
-    .info-img img {
-      transform-origin: bottom center;
-      animation: swing 2.5s infinite ease-in-out;
-    }
-  }
-
-  .fireworks {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-
-    span {
-      display: block;
-      width: 15vw;
-      height: 15vw;
-      max-width: 200px;
-      max-height: 200px;
-      background: url(../images/ico-firework.png) no-repeat 50% 50%;
-      background-size: contain;
-      position: absolute;
-
-      &:nth-child(1) {
-        right: -25%;
-        top: 15%;
-        opacity: 0;
-        animation: firework 3s ease-in-out infinite;
-      }
-
-      &:nth-child(2) {
-        left: -25%;
-        top: 55%;
-        opacity: 0;
-        animation: firework 3s ease-in-out infinite;
-        animation-delay: 1s;
-      }
-    }
-  }
-}
-
-.store-2 {
-  --frame-color: var(--darkred);
-
-  background: url(../images/bg-store2.jpg) no-repeat 50% 0;
-  background-size: cover;
-  padding-top: calc(var(--gutter) * 4.25);
-  position: relative;
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: calc(var(--gutter) * 4);
-    background: url(../images/ico-store.png) repeat-x 50% 0;
-    background-size: auto 100%;
-  }
-
-  .btn {
-    background-color: var(--red);
-    color: #ECBC80;
-  }
-
-  .note {
-    li {
-      margin-bottom: calc(var(--gutter) / 2);
-    }
-  }
-
-  .mark {
-    max-width: 240px;
-  }
-
-  .main-info {
-    flex-direction: column-reverse;
-
-    >div {
-      width: 60%;
-    }
-
-    .info-img {
-      width: 70%;
-      margin: 0 auto;
-    }
-  }
-
-  .info1 {
-    .shadow {
-      &::after {
-        transform: translate(30%, -60%);
-      }
-    }
-  }
-
-  .info2 {
-    .info-img {
-      margin: 0 0 0 auto;
-    }
-
-    .firecracker {
-      width: 25%;
-      position: absolute;
-      bottom: 92.5%;
-      left: 10%;
-      transform-origin: top right;
-      animation: swing 2.5s infinite ease-in-out;
-    }
-  }
-
-  .cloud {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-
-    span {
-      background: url('../images/ico-cloud-03.png') no-repeat 0 0;
-      background-size: 100% auto;
-    }
-  }
-}
-
-.shop {
-  background: url(../images/bg-shop.jpg) no-repeat 35% 0;
-  background-size: cover;
-  border-top: 3px solid var(--darkred);
-  position: relative;
-
-  .lanterns {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: relative;
-    z-index: 1;
-
-    span {
-      display: block;
-      width: calc(100% / (14 * 1.5));
-      height: 100%;
-      margin: 0 calc(var(--gutter) / 2);
-      min-width: calc(100% / (6 * 1.5));
-      background: url(../images/ico-lantern.png) no-repeat 50% 0;
-      background-size: 100% auto;
-      transform-origin: center top;
-
-      &.swing {
-        animation: swing calc(var(--swing-time) * 1ms) forwards ease-in-out;
-      }
-    }
-  }
-
-  section {
-    z-index: 3;
-    padding-top: 0;
-    padding-bottom: 0;
-    overflow: hidden;
-  }
-
-  &-title {
-    width: 90%;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, 0);
-    z-index: 4;
-  }
-
-  &-rabbit {
-    width: 100%;
-    height: 100%;
-    animation: bounceInUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
-  }
-
-  &-bg {
-    width: 100%;
-    height: 80%;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    background-image: url('../images/bg-shop-front-mb.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 100%;
-    z-index: 2;
-  }
-
-  &-tiger {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    left: 50%;
-    top: 32.5%;
-    z-index: 1;
-    transform-origin: right bottom;
-    transform: translateX(-335%);
-    animation: tigerSwing 2.5s ease-in-out infinite;
-  }
-
-}
-
-@media (max-width: 720px) {
-  .store-2 {
-    .btn {
-      width: 80%;
-    }
-
-    .info1 {
-      transform: translate(20%, -40%);
-      margin-bottom: -40%;
-
-      .info-img {
-        margin: 0 0 0 auto;
-      }
-    }
-
-    .info2 {
-      transform: translate(-32%, 0);
-      margin-bottom: 15%;
-    }
-
-    .cloud span {
-      &:nth-child(1) {
-        display: block;
-        transform-origin: top right;
-        transform: scale(1.5);
-        top: 15%;
-        right: 0;
-      }
-
-      &:nth-child(3) {
-        display: block;
-        transform-origin: top left;
-        transform: scale(1.5);
-        top: 35%;
-        left: 5%;
-      }
-    }
-  }
-
-  .shop {
-    .lanterns {
-      margin-bottom: -10%;
-
-      span {
-        pointer-events: none;
-      }
-    }
-  }
-}
-
 @media (min-width: 720px) {
   main {
     .mark {
@@ -416,63 +147,6 @@ main {
     >div:not(.fireworks) {
       width: 40%;
       margin-bottom: calc(var(--gutter) * 2);
-    }
-  }
-
-  .store-1 {
-    background: url(../images/bg-store.jpg) no-repeat center center;
-    background-size: cover;
-  }
-
-  .store-2 {
-    .main-info {
-      flex-direction: row;
-    }
-
-    .cloud {
-      span {
-        &:nth-child(1) {
-          left: -10%;
-          top: 15%;
-          animation: cloud1move 5s alternate-reverse ease-in-out infinite;
-        }
-
-        &:nth-child(2) {
-          left: -25%;
-          top: 55%;
-          animation: cloud1move 7s alternate ease-in-out infinite;
-        }
-
-        &:nth-child(3) {
-          right: -15%;
-          top: 5%;
-          animation: cloud1move 9s alternate ease-in-out infinite;
-        }
-
-        &:nth-child(4) {
-          right: -25%;
-          top: 40%;
-          animation: cloud1move 11s alternate-reverse ease-in-out infinite;
-        }
-      }
-    }
-  }
-
-  .shop {
-    background-position: 0 0;
-
-    .lanterns {
-      height: 150px;
-
-      span {
-        width: calc(100% / (14 * 1.5));
-        min-width: 0;
-      }
-    }
-
-    &-bg {
-      background-image: url('../images/bg-shop-front.png');
-      background-size: auto 100%;
     }
   }
 
@@ -535,52 +209,5 @@ main {
   100% {
     opacity: 0;
     transform: scale(1);
-  }
-}
-
-@keyframes tigerSwing {
-  20% {
-    transform: var(--tiger-transform) rotate3d(0, 0, 1, 12deg);
-  }
-
-  40% {
-    transform: var(--tiger-transform) rotate3d(0, 0, 1, -8deg);
-  }
-
-  60% {
-    transform: var(--tiger-transform) rotate3d(0, 0, 1, 5deg);
-  }
-
-  80% {
-    transform: var(--tiger-transform) rotate3d(0, 0, 1, -5deg);
-  }
-
-  to {
-    transform: var(--tiger-transform) rotate3d(0, 0, 1, 0deg);
-  }
-}
-
-@keyframes bounceInUp {
-  from {
-    opacity: 0;
-    transform: translate(0, 3000px) scaleY(5);
-  }
-
-  60% {
-    opacity: 1;
-    transform: translate(0, -20px) scaleY(0.9);
-    margin-top: 6%;
-  }
-
-  75% {
-    transform: translate(0, 10px) scaleY(0.95);
-  }
-
-  90% {
-    transform: translate(0, -5px) scaleY(0.985);
-  }
-
-  to {
-    transform: translate(0, 0, 0);
   }
 }

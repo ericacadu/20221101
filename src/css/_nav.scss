@@ -1,7 +1,17 @@
 nav {
   font-family: 'cwTeXYen', 'Mitr', sans-serif;
   background: var(--primary);
-  z-index: 9;
+  width: 100%;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 9;
+
+    &+main {
+      padding-top: 76px;
+    }
+  }
 
   ul {
     display: flex;
@@ -24,6 +34,12 @@ nav {
   nav {
     a {
       padding: 0.5rem 1rem;
+    }
+
+    &.sticky {
+      &+main {
+        padding-top: 81px;
+      }
     }
   }
 }

@@ -1,0 +1,163 @@
+.store-2 {
+  --frame-color: var(--darkred);
+
+  background: url(../images/bg-store2.jpg) no-repeat 50% 0;
+  background-size: cover;
+  padding-top: calc(var(--gutter) * 4.25);
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(var(--gutter) * 4);
+    background: url(../images/ico-store.png) repeat-x 50% 0;
+    background-size: auto 100%;
+  }
+
+  .btn {
+    background-color: var(--red);
+    color: #ECBC80;
+  }
+
+  .note {
+    li {
+      margin-bottom: calc(var(--gutter) / 2);
+    }
+  }
+
+  .mark {
+    max-width: 240px;
+  }
+
+  .main-info {
+    flex-direction: column-reverse;
+
+    >div {
+      width: 60%;
+    }
+
+    .info-img {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+  .info1 {
+    .shadow {
+      &::after {
+        transform: translate(30%, -60%);
+      }
+    }
+  }
+
+  .info2 {
+    .info-img {
+      margin: 0 0 0 auto;
+    }
+
+    .firecracker {
+      width: 25%;
+      position: absolute;
+      bottom: 92.5%;
+      left: 10%;
+      transform-origin: top right;
+      animation: swing 2.5s infinite ease-in-out;
+    }
+  }
+
+  .cloud {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    span {
+      background: url('../images/ico-cloud-03.png') no-repeat 0 0;
+      background-size: 100% auto;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .store-2 {
+    .btn {
+      width: 80%;
+    }
+
+    .info1 {
+      transform: translate(20%, -40%);
+      margin-bottom: -40%;
+
+      .info-img {
+        margin: 0 0 0 auto;
+      }
+    }
+
+    .info2 {
+      transform: translate(-32%, 0);
+      margin-bottom: 15%;
+    }
+
+    .cloud span {
+      &:nth-child(1) {
+        display: block;
+        transform-origin: top right;
+        transform: scale(1.5);
+        top: 15%;
+        right: 0;
+      }
+
+      &:nth-child(3) {
+        display: block;
+        transform-origin: top left;
+        transform: scale(1.5);
+        top: 35%;
+        left: 5%;
+      }
+    }
+  }
+}
+
+@media (min-width: 720px) {
+  .store-2 {
+    .main-info {
+      flex-direction: row;
+
+      >div {
+        width: 40%;
+      }
+    }
+
+    .cloud {
+      span {
+        &:nth-child(1) {
+          left: -10%;
+          top: 15%;
+          animation: cloud1move 5s alternate-reverse ease-in-out infinite;
+        }
+
+        &:nth-child(2) {
+          left: -25%;
+          top: 55%;
+          animation: cloud1move 7s alternate ease-in-out infinite;
+        }
+
+        &:nth-child(3) {
+          right: -15%;
+          top: 5%;
+          animation: cloud1move 9s alternate ease-in-out infinite;
+        }
+
+        &:nth-child(4) {
+          right: -25%;
+          top: 40%;
+          animation: cloud1move 11s alternate-reverse ease-in-out infinite;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+footer {
+  background: url('../images/ico-dot.png') repeat-x 0 0;
+  background-size: 20px auto;
+  text-align: center;
+  padding: var(--gutter);
+
+  p {
+    padding-top: calc(var(--gutter) * 2);
+  }
+}
+
+@media (max-width: 720px) {
+  footer {
+    background-size: 16px auto;
+
+    p {
+      font-size: 0.8rem;
+      padding-top: calc(var(--gutter) * 1);
+    }
+  }
+}
