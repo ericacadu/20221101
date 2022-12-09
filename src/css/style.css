@@ -21,7 +21,6 @@ body {
 html {
   font-family: "Noto Sans TC", sans-serif;
   font-size: 16px;
-  scroll-behavior: smooth;
 }
 html ul,
 html li {
@@ -896,7 +895,7 @@ footer p {
 .dialog ul li::before {
   content: "";
   display: inline-block;
-  background: url("../images/ico-list-01.png") no-repeat 50% 50%;
+  background: url("../images/ico-list-01.png") no-repeat 0 50%;
   background-size: 1rem auto;
   width: 1.5rem;
   height: 1.65rem;

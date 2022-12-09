@@ -2,7 +2,7 @@
 
 const $ = (e) => document.querySelector(e);
 const lanterns = document.querySelectorAll(".shop span");
-const links = document.querySelectorAll("a[href^='#']");
+const links = document.querySelectorAll("a[hash-target]");
 
 lanterns.forEach((item) => {
   item.addEventListener("mouseover", function () {
@@ -23,13 +23,14 @@ function triggerScroll() {
   const shopTop = $(".shop").getBoundingClientRect().top;
   const shopHeight = $(".shop").offsetHeight;
 
-  $("nav").classList.toggle("sticky", scrollY > headerHeight);
+  $("nav").classList.toggle("sticky", scrollY >= headerHeight);
   $(".shop-rabbit").classList.toggle("bounceInUp", shopTop < shopHeight / 2);
 }
 
 links.forEach((link) => {
-  link.addEventListener("click", () => {
-    const target = $(link.getAttribute("href"));
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = $(link.getAttribute("hash-target"));
     const navHeight = $("nav").offsetHeight;
     const distance = target.offsetTop - navHeight;
 
