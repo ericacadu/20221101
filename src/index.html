@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
     <title>GASH 2 YOU 新春福兔送好禮</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <script src="./js/index.js" defer></script>
   </head>
   <body>
+    <div id="top"></div>
     <header>
       <img class="logo" src="./images/logo.png" alt="" />
 
@@ -39,14 +42,14 @@
     <nav>
       <section>
         <ul>
-          <li><a href="#">台港超商</a></li>
-          <li><a href="#">GASH商城</a></li>
-          <li><a href="#" target="_blank">遊戲主打星</a></li>
+          <li><a href="#store">台港超商</a></li>
+          <li><a href="#shop">GASH商城</a></li>
+          <li><a href="./gamelist.html" target="_blank">遊戲主打星</a></li>
         </ul>
       </section>
     </nav>
 
-    <main>
+    <main id="store">
       <div class="store-1">
         <section>
           <div class="mark">
@@ -61,7 +64,9 @@
               <div class="info-title">
                 <img src="./images/title-store-01.png" alt="" />
               </div>
-              <a href="#" class="btn">活動說明</a>
+              <a href="" data-fancybox data-src="#store1-1" class="btn"
+                >活動說明</a
+              >
             </div>
 
             <div class="info2">
@@ -71,7 +76,9 @@
               <div class="info-title">
                 <img src="./images/title-store-02.png" alt="" />
               </div>
-              <a href="#" class="btn">活動說明</a>
+              <a href="" data-fancybox data-src="#store1-2" class="btn"
+                >活動說明</a
+              >
             </div>
           </div>
 
@@ -132,7 +139,9 @@
               <div class="info-title">
                 <img src="./images/title-store2-01.png" alt="" />
               </div>
-              <a href="#" class="btn">活動說明</a>
+              <a href="" data-fancybox data-src="#store2-1" class="btn"
+                >活動說明</a
+              >
             </div>
 
             <div class="info2">
@@ -147,7 +156,9 @@
               <div class="info-title">
                 <img src="./images/title-store2-02.png" alt="" />
               </div>
-              <a href="#" class="btn">活動說明</a>
+              <a href="" data-fancybox data-src="#store2-2" class="btn"
+                >活動說明</a
+              >
             </div>
           </div>
 
@@ -193,8 +204,7 @@
           </div>
         </section>
       </div>
-
-      <div class="shop">
+      <div class="shop" id="shop">
         <div class="lanterns">
           <span></span><span></span><span></span><span></span><span></span
           ><span></span><span></span><span></span><span></span><span></span
@@ -207,8 +217,8 @@
           </div>
 
           <div class="shop-rabbit">
-            <a href="#"></a>
-            <a href="#"></a>
+            <a href="" data-fancybox data-src="#shop-1"></a>
+            <a href="" data-fancybox data-src="#shop-2"></a>
             <img src="./images/img-shop-rabbit.png" alt="" />
           </div>
         </section>
@@ -223,5 +233,198 @@
     <footer>
       <p>&copy; 2023 GASH POINT Co., Ltd. All Rights Reserved.</p>
     </footer>
+
+    <div id="store1-1" class="dialog">
+      <div class="content">
+        <h3>活動說明</h3>
+        <ul>
+          <li>活動期間：2023/1/10 00:00~2023/2/8 23:59</li>
+          <li>
+            活動內容：至7-ELEVEN購買GASH點數單筆儲值1000點以上，
+            即可抽30~1萬點GASH點數。
+          </li>
+          <li>獎品內容：GASH30~10000點隨機抽出 (數量有限送完為止)</li>
+          <li>獎勵派發：儲值完成由beanfun! app派送GASH點數至錢包。</li>
+        </ul>
+        <p>
+          ※於輸PIN頁填寫之手機門號需與beanfun!註冊門號相同，儲值完成即從beanfun!派送獎項。
+        </p>
+        <p>
+          ※本活動採單筆金額為判斷依據，滿1000元以上(含)即可獲得乙次抽獎機會。
+        </p>
+      </div>
+    </div>
+
+    <div id="store1-2" class="dialog">
+      <div class="content">
+        <h3>活動說明</h3>
+        <ul>
+          <li style="white-space: nowrap">
+            活動期間：指定黃金周末加碼送(1/20~1/30)
+          </li>
+          <li>活動內容：至全台7-ELEVEN購買GASH點數單筆發票滿1,000元以上</li>
+          <li>
+            獎品內容：7-ELEVEN抵用金 20/50/100/200 元等隨機送出!
+            「可累贈,單筆發票最多回饋5次,抵用金可使用至(2023/02/08)」
+          </li>
+          <li>獎勵派發：7-ELEVEN結帳時由小白單派送</li>
+        </ul>
+        <p>※「可累贈，單筆發票最多回饋5次，抵用金可使用至2023/02/08」</p>
+      </div>
+    </div>
+
+    <div id="store2-1" class="dialog">
+      <div class="content">
+        <h3>活動說明</h3>
+        <ul>
+          <li>活動期間：2023/1/18 12:00~2023/1/31 23:59</li>
+          <li>
+            活動內容：於港澳7-ELEVEN單筆購買並儲值GASH
+            500點以上或指定專用卡，可獲額外5%點數回贈！
+            <table>
+              <tr>
+                <th>GASH點數</th>
+                <td>1000/3000/5000/10,000/20,000點</td>
+              </tr>
+              <tr>
+                <th>指定專用卡</th>
+                <td>怪物彈珠、蒼天英雄誌2、超異域公主連結</td>
+              </tr>
+            </table>
+            <p>
+              於儲值密碼輸入頁填寫beanfun!已認證手機號碼，
+              並直接儲值至任一遊戲內，可獲5%點數回贈！
+            </p>
+          </li>
+          <li>獎品內容：儲值金額之5%錢包點數</li>
+          <li>獎勵派發：儲值完成由beanfun! app派送GASH點數至錢包。</li>
+        </ul>
+        <p>※本活動採單筆金額為判斷依據，每個帳號每個面額限領一次。</p>
+      </div>
+    </div>
+
+    <div id="store2-2" class="dialog">
+      <div class="content">
+        <h3>活動說明</h3>
+        <ul>
+          <li>活動期間：2023/1/19 12:00~2023/2/1 23:59</li>
+          <li>
+            活動內容：於港澳OK單筆購買並儲值GASH 500點以上或指定專用卡，
+            可獲額外5%點數回贈！
+            <table>
+              <tr>
+                <th>GASH點數</th>
+                <td>1000/3000/5000/10,000/20,000點</td>
+              </tr>
+              <tr>
+                <th>指定專用卡</th>
+                <td>怪物彈珠、蒼天英雄誌2、超異域公主連結</td>
+              </tr>
+            </table>
+            <p>
+              於儲值密碼輸入頁填寫beanfun!已認證手機號碼，
+              並直接儲值至任一遊戲內，可獲5%點數回贈！
+            </p>
+          </li>
+          <li>獎品內容：儲值金額之5%錢包點數</li>
+          <li>獎勵派發：儲值完成由beanfun! app派送GASH點數至錢包。</li>
+        </ul>
+        <p>※本活動採單筆金額為判斷依據，每個帳號每個面額限領一次。</p>
+      </div>
+    </div>
+
+    <div id="shop-1" class="dialog">
+      <div class="content">
+        <h3>活動說明</h3>
+        <ul>
+          <li>活動期間：2023/1/16 00:00 – 1/31 23:59</li>
+          <li>
+            活動內容：活動內容：活動期間至台灣GASH商城GASH點數卡、新楓之谷專用卡及怪物彈珠專用卡，即可享GASH紅包豪禮！
+          </li>
+          <li>
+            獎品內容：
+            <p>
+              <span>★開運驚喜紅包</span>
+              於GASH商城購買【GASH點數卡
+              999點(含)以上商品及新楓之谷專用卡怪物彈珠專用卡全品項】立即贈商城優惠碼88元
+              (後台設定結帳後直接派；限下次結帳使用；共20000組)
+            </p>
+            <p>
+              <span>★玉兔迎春紅包</span>
+              於GASH商城購買【GASH點數卡
+              999點(含)以上商品及新楓之谷專用卡怪物彈珠專用卡全品項】立即贈商城優惠碼88元
+              (後台設定結帳後直接派；限下次結帳使用；共20000組)
+            </p>
+            <p>
+              <span>★鴻運當頭紅包</span>
+              活動期間於GASH商城累積消費滿88888元 加碼再抽iPhone 13 pro
+              乙台(實體獎項活動結束抽獎後派)
+            </p>
+          </li>
+        </ul>
+        <p>※不限同一用戶購買次數與單次購買數量。</p>
+        <p>※優惠碼數量有限送完為止，派送完畢將會於GASH主文章進行公告。</p>
+      </div>
+      <div class="content">
+        <h3>注意事項</h3>
+        <ol>
+          <li>本活動辦法適用台灣地區GASH商城。</li>
+          <li>商品內容若有變更，依據GASH官網最新公告為主。</li>
+          <li>
+            抽獎之獎項將於2/13前於GASH官網發佈中獎公告，中獎通知將依購買時填寫之Email寄發，請務必確認購買時填寫資料正確。
+          </li>
+          <li>
+            請務必確認所購買的商品為您所需，商品一經購買，恕無法接受退換貨。活動商品一經售出不可退貨，折扣優惠、獎項，數量有限送完為止。
+          </li>
+          <li>
+            若因手機、網路、平板電腦等設定或其他不可預期之問題，導致無法取得，致未收到通知或其他可歸責於己事由致無法符合贈品領取資格，即視為自動放棄參與本活動資格。
+          </li>
+          <li>
+            依中華民國稅法規定，機會中獎年度累積價值超過新臺幣1,000元者，將併入中獎人個人年度綜合所得稅申報；若獎項金額超過新臺幣20,000元(含)者，本公司可能需先代扣繳機會中獎稅(獎項金額之10%)，中獎人須自行負擔並先繳付該稅金後，始得兌領獎項；若未能依法於兌換期限前繳納應繳稅額，即視為自動放棄得獎資格；不接受開立扣繳憑單者，亦同。如有其他未盡事悉依稅法相關規定辦理。如需客服中心協助，請洽線上客服。
+          </li>
+          <li>
+            依據個人資料保護法，參加本活動視為瞭解及同意主辦單位為抽獎及行銷活動之需要進行蒐集、處理及利用其個人資料（僅限電話、email等資訊）。
+            參加者如欲閱覽、變更、刪除個資或要求主辦單位停止蒐集、處理及利用個人資料，請通知主辦單位。
+          </li>
+          <li>
+            其他未盡事宜，悉依中華民國相關法令辦理。樂點股份有限公司保留隨時修改、變更、終止本活動與替換其他等值贈品之權利。
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div id="shop-2" class="dialog">
+      <div class="content">
+        <h3>活動說明</h3>
+        <ul>
+          <li>活動期間： 2023/1/10 12:00 – 2/2 23:59</li>
+          <li>
+            活動內容：活動期間至港澳GASH商城購買指定品項，即可享有GASH新春優惠碼及專屬優惠！
+          </li>
+          <li>
+            獎品內容：
+            <p>
+              <span>①港澳GASH商城新春限定優惠碼</span>
+              於港澳GASH商城單筆購買滿HK$500， 使用優惠碼「HKCNY10」即減HK$10
+            </p>
+            <p>
+              <span>②港澳GASH商城多品項限時優惠</span>
+              遊戲專用卡95折優惠
+            </p>
+            <ul>
+              <li>BitCash全面額限時85折優惠！</li>
+              <li>Steam, GooglePlay, iTunes,</li>
+              <li>PSN, XBOX 禮物卡限時特價！</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        <h3>注意事項</h3>
+        <p>※優惠碼兌換限制：每個帳號限用一次</p>
+        <p>※各類品項不限同一用戶購買次數與單次購買數量。</p>
+        <p>※優惠碼數量有限送完為止，派送完畢將會於GASH主文章進行公告。</p>
+      </div>
+    </div>
   </body>
 </html>

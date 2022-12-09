@@ -36,10 +36,8 @@ nav {
       padding: 0.5rem 1rem;
     }
 
-    &.sticky {
-      &+main {
-        padding-top: 81px;
-      }
+    &.sticky+main {
+      padding-top: 81px;
     }
   }
 }

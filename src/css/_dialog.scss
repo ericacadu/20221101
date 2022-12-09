@@ -1,0 +1,114 @@
+:root {
+  --dialog-primary: #BC1515;
+}
+
+.dialog {
+  display: none;
+  border-radius: 1rem;
+  max-width: 720px;
+  color: black;
+  padding: 1rem;
+
+  h3 {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-top: 0;
+  }
+
+  li {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    margin-bottom: 1rem;
+
+    li {
+      padding-left: 1.5rem;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        background: url('../images/ico-list-01.png') no-repeat 50% 50%;
+        background-size: 1rem auto;
+        width: 1.5rem;
+        height: 1.65rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.5rem auto;
+
+    td,
+    th {
+      border: 2px solid var(--dialog-primary);
+      padding: 0.5rem;
+      font-weight: normal;
+    }
+
+    th {
+      white-space: nowrap;
+    }
+
+    td {
+      font-size: 0.8rem;
+    }
+  }
+
+  .content {
+    cursor: default;
+
+    &+.content {
+      color: white;
+      margin-top: 1rem;
+    }
+
+    >p {
+      margin-bottom: 1rem;
+      color: var(--dialog-primary);
+      font-weight: 500;
+    }
+  }
+
+  &[id^="shop"] {
+    background: var(--dialog-primary);
+    color: #FFD4D4;
+
+    ul {
+      li {
+        &::before {
+          background-image: url('../images/ico-list-02.png');
+          ;
+          background-size: 1rem auto;
+        }
+
+        span {
+          display: block;
+          color: #F9AE3B;
+          font-weight: 500;
+        }
+
+        p {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    ol {
+      margin-left: -1rem;
+    }
+
+    .content {
+      >p {
+        color: white;
+      }
+    }
+  }
+
+}

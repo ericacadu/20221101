@@ -1,7 +1,8 @@
-import json from "./data.json";
+// import json from "./data.json";
 
 const $ = (e) => document.querySelector(e);
 const lanterns = document.querySelectorAll(".shop span");
+const links = document.querySelectorAll("a[href^='#']");
 
 lanterns.forEach((item) => {
   item.addEventListener("mouseover", function () {
@@ -16,18 +17,27 @@ lanterns.forEach((item) => {
   });
 });
 
-const toggleSticky = (flag) => $("nav").classList.toggle("sticky", flag);
-const toggleBounce = (flag) =>
-  $(".shop-rabbit").classList.toggle("bounceInUp", flag);
+function triggerScroll() {
+  const { scrollY } = window;
+  const headerHeight = $("header").offsetHeight;
+  const shopTop = $(".shop").getBoundingClientRect().top;
+  const shopHeight = $(".shop").offsetHeight;
 
-function watch(target, fn) {
-  const observer = new IntersectionObserver(fn);
-  observer.observe(target);
+  $("nav").classList.toggle("sticky", scrollY > headerHeight);
+  $(".shop-rabbit").classList.toggle("bounceInUp", shopTop < shopHeight / 2);
 }
 
-watch($(".shop"), (entries) => {
-  entries.forEach((entry) => toggleBounce(entry.isIntersecting));
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    const target = $(link.getAttribute("href"));
+    const navHeight = $("nav").offsetHeight;
+    const distance = target.offsetTop - navHeight;
+
+    window.scroll({
+      top: distance,
+      behavior: "smooth",
+    });
+  });
 });
-watch($("header"), (entries) => {
-  entries.forEach((entry) => toggleSticky(!entry.isIntersecting));
-});
+
+window.addEventListener("scroll", triggerScroll);
