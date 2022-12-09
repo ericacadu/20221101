@@ -949,6 +949,15 @@ footer p {
 .dialog[id^=shop] ul li p {
   margin-bottom: 1rem;
 }
+.dialog[id^=shop] ul li li {
+  list-style: disc;
+  padding: 0;
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+}
+.dialog[id^=shop] ul li li::before {
+  display: none;
+}
 .dialog[id^=shop] ol {
   margin-left: -1rem;
 }
