@@ -39,7 +39,8 @@
       width: 60%;
     }
 
-    .info-img {
+    .info-img,
+    .svgConteiner {
       width: 70%;
       margin: 0 auto;
     }
@@ -50,6 +51,10 @@
       &::after {
         transform: translate(30%, -60%);
       }
+    }
+
+    .svgConteiner svg {
+      transform: translateY(5px) !important;
     }
   }
 
@@ -92,7 +97,8 @@
       transform: translate(20%, -40%);
       margin-bottom: -40%;
 
-      .info-img {
+      .info-img,
+      .svgConteiner {
         margin: 0 0 0 auto;
       }
     }
@@ -130,6 +136,10 @@
       >div {
         width: 40%;
       }
+    }
+
+    .svgConteiner svg {
+      transform: translateY(8px) !important;
     }
 
     .cloud {

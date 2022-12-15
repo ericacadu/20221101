@@ -8,16 +8,25 @@
     <title>GASH 2 YOU 新春福兔送好禮</title>
     <link rel="stylesheet" href="./css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.0/lottie.min.js"></script>
     <script src="./js/index.js" defer></script>
   </head>
+
   <body>
-    <div id="top"></div>
     <header>
       <img class="logo" src="./images/logo.png" alt="" />
 
       <section>
         <div class="banner">
-          <img src="./images/banner-kv.png" alt="" class="banner-kv" />
+          <div id="lottie-banner"></div>
+          <script>
+            lottie.loadAnimation({
+              container: document.querySelector("#lottie-banner"),
+              animType: "svg",
+              loop: true,
+              path: "./js/banner.json",
+            });
+          </script>
           <img src="./images/banner-title.jpg" alt="" class="banner-title" />
 
           <div class="flower">
@@ -62,9 +71,7 @@
 
           <div class="main-info">
             <div class="info1">
-              <div class="info-img">
-                <img src="./images/img-store-01.png" alt="" />
-              </div>
+              <div class="svgConteiner" id="lottie-store"></div>
               <div class="info-title">
                 <img src="./images/title-store-01.png" alt="" />
               </div>
@@ -137,9 +144,7 @@
 
           <div class="main-info">
             <div class="info1">
-              <div class="info-img shadow">
-                <img src="./images/img-store2-01.png" alt="" />
-              </div>
+              <div class="svgConteiner shadow" id="lottie-store2"></div>
               <div class="info-title">
                 <img src="./images/title-store2-01.png" alt="" />
               </div>
@@ -182,7 +187,7 @@
                 </p>
                 <p>
                   獨享任務卡之贈點請於30天內領取完畢，逾期未有領取將無法補發。
-                  獨享任務卡之免費點數發送後，有效期至次月月底23:59為止，逾期未使用之點數將於發送次月月底回收，請注意使用期限。
+                  獨享任務卡之免費點數發送後，有效期至次月月底23:59止為止，逾期未使用之點數將於發送次月月底回收，請注意使用期限。
                 </p>
               </li>
               <li>
@@ -242,10 +247,10 @@
       <div class="content">
         <h3>活動說明</h3>
         <ul>
-          <li>活動期間：2023/1/10 00:00~2023/2/8 23:59</li>
+          <li>活動期間：2023/1/10 00:00~2023/2/8 23:59止</li>
           <li>
-            活動內容：至7-ELEVEN購買GASH點數單筆儲值1000點以上，
-            即可抽30~1萬點GASH點數。
+            活動內容：至7-ELEVEN購買GASH點數單筆儲值1000點以上並成功儲值至遊戲內，即可獲得GASH點數刮刮卡一張
+            , 30~1萬點GASH點數等你刮!
           </li>
           <li>獎品內容：GASH30~10000點隨機抽出 (數量有限送完為止)</li>
           <li>獎勵派發：儲值完成由beanfun! app派送GASH點數至錢包。</li>
@@ -264,7 +269,7 @@
         <h3>活動說明</h3>
         <ul>
           <li style="white-space: nowrap">
-            活動期間：指定黃金周末加碼送(1/20~1/30)
+            活動期間：指定時段加碼送(1/20~1/30)
           </li>
           <li>活動內容：至全台7-ELEVEN購買GASH點數單筆發票滿1,000元以上</li>
           <li>
@@ -277,11 +282,11 @@
       </div>
     </div>
 
-    <div id="store2-1" class="dialog">
+    <div id="store2-2" class="dialog">
       <div class="content">
         <h3>活動說明</h3>
         <ul>
-          <li>活動期間：2023/1/18 12:00~2023/1/31 23:59</li>
+          <li>活動期間：2023/1/18 12:00~2023/2/1 23:59止</li>
           <li>
             活動內容：於港澳7-ELEVEN單筆購買並儲值GASH
             500點以上或指定專用卡，可獲額外5%點數回贈！
@@ -307,11 +312,11 @@
       </div>
     </div>
 
-    <div id="store2-2" class="dialog">
+    <div id="store2-1" class="dialog">
       <div class="content">
         <h3>活動說明</h3>
         <ul>
-          <li>活動期間：2023/1/19 12:00~2023/2/1 23:59</li>
+          <li>活動期間：2023/1/19 12:00~2023/2/1 23:59止</li>
           <li>
             活動內容：於港澳OK單筆購買並儲值GASH 500點以上或指定專用卡，
             可獲額外5%點數回贈！
@@ -341,9 +346,9 @@
       <div class="content">
         <h3>活動說明</h3>
         <ul>
-          <li>活動期間：2023/1/16 00:00 – 1/31 23:59</li>
+          <li>活動期間：2023/1/16 00:00 – 1/31 23:59止</li>
           <li>
-            活動內容：活動內容：活動期間至台灣GASH商城GASH點數卡、新楓之谷專用卡及怪物彈珠專用卡，即可享GASH紅包豪禮！
+            活動內容：活動期間至台灣GASH商城GASH點數卡、新楓之谷專用卡及怪物彈珠專用卡，即可享GASH紅包豪禮！
           </li>
           <li>
             獎品內容：
@@ -401,7 +406,7 @@
       <div class="content">
         <h3>活動說明</h3>
         <ul>
-          <li>活動期間： 2023/1/10 12:00 – 2/2 23:59</li>
+          <li>活動期間： 2023/1/10 12:00 – 2/1 23:59止</li>
           <li>
             活動內容：活動期間至港澳GASH商城購買指定品項，即可享有GASH新春優惠碼及專屬優惠！
           </li>

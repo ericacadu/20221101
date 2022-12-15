@@ -17,7 +17,7 @@ header {
     position: relative;
     z-index: 2;
 
-    &-kv {
+    #lottie-banner {
       width: calc(100% + var(--gutter));
       position: relative;
       left: 50%;
@@ -183,7 +183,7 @@ header {
       padding-bottom: calc(var(--gutter) * 2);
       border-radius: calc(var(--gutter) * 2);
 
-      &-kv {
+      #lottie-banner {
         width: calc(100% + var(--gutter) * 2);
       }
 

@@ -1,5 +1,3 @@
-// import json from "./data.json";
-
 const $ = (e) => document.querySelector(e);
 const lanterns = document.querySelectorAll(".shop span");
 const links = document.querySelectorAll("a[hash-target]");
@@ -24,7 +22,7 @@ function triggerScroll() {
   const shopHeight = $(".shop").offsetHeight;
 
   $("nav").classList.toggle("sticky", scrollY >= headerHeight);
-  $(".shop-rabbit").classList.toggle("bounceInUp", shopTop < shopHeight / 2);
+  $(".shop-rabbit").classList.toggle("bounceInUp", shopTop < shopHeight);
 }
 
 links.forEach((link) => {
@@ -42,3 +40,17 @@ links.forEach((link) => {
 });
 
 window.addEventListener("scroll", triggerScroll);
+
+lottie.loadAnimation({
+  container: $("#lottie-store"),
+  animType: "svg",
+  loop: true,
+  path: "./js/store.json",
+});
+
+lottie.loadAnimation({
+  container: $("#lottie-store2"),
+  animType: "svg",
+  loop: true,
+  path: "./js/store2.json",
+});

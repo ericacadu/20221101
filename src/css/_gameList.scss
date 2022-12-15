@@ -1,0 +1,235 @@
+:root {
+  --border-color: white;
+  --border-size: 1px;
+  --deco-size: calc(var(--gutter) * 1.75);
+  --bg-color: #C3402C;
+}
+
+.searchBar {
+  overflow: hidden;
+  max-width: 1280px;
+  margin: var(--gutter) auto 0;
+  position: relative;
+  font-size: 1rem;
+  border-radius: 50px;
+  border: 3px solid #BB272D;
+
+  label {
+    background: white;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: calc(100% - 1rem * 2);
+  }
+
+  span {
+    white-space: nowrap;
+    display: block;
+    font-weight: 500;
+  }
+
+  input {
+    width: 100%;
+    outline: 0;
+    border: 0;
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+header {
+  .gameListPage & {
+    padding-bottom: var(--gutter);
+  }
+}
+
+main {
+  .gameListPage & {
+    background: var(--red);
+    color: white;
+    padding-bottom: calc(var(--gutter) * 2);
+
+    h3 {
+      text-align: center;
+      font-weight: 400;
+      margin: 0 auto;
+      padding: calc(var(--gutter) * 2) var(--gutter);
+    }
+
+    section {
+      max-width: calc(1200px - var(--gutter) * 2);
+      padding: 0 var(--gutter);
+
+      &+section {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+}
+
+.gameListPage {
+  .gameList {
+    min-height: 30vh;
+  }
+
+  .list-board {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--darkred);
+    border: var(--border-size) solid var(--border-color);
+    border-radius: calc(var(--gutter) * 0.5);
+  }
+
+  .list-deco {
+    position: absolute;
+    top: calc(var(--border-size) * -1);
+    left: calc(var(--border-size) * -1);
+    width: calc(100% + var(--border-size) * 2);
+    height: var(--deco-size);
+    overflow: hidden;
+    z-index: 1;
+    display: none;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: var(--deco-size);
+      height: var(--deco-size);
+      border: 2px solid var(--border-color);
+      background: var(--bg-color);
+      border-radius: 50%;
+      position: absolute;
+      z-index: 2;
+    }
+
+    &::before {
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+
+    &~.list-deco {
+      bottom: calc(var(--border-size) * -1);
+      top: auto;
+      transform: scaleY(-1);
+    }
+  }
+
+  .list-logo {
+    padding: 1rem 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 0;
+    border-bottom: var(--border-size) solid var(--border-color);
+
+    img {
+      width: 60%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    a {
+      width: 80%;
+      height: 2rem;
+      background: url('../images/btn-link.png') no-repeat center top;
+      background-size: contain;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    a {
+      display: inline-block;
+      text-decoration: underline;
+      color: #E6B45A;
+      margin: 0 0.25rem;
+      font-weight: 500;
+    }
+  }
+
+  th,
+  td {
+    padding: 1rem 0.5rem;
+    vertical-align: top;
+    color: white;
+    font-weight: 400;
+  }
+
+  th {
+    white-space: nowrap;
+    width: calc(100% / 5);
+    border-right: var(--border-size) solid var(--border-color);
+  }
+
+  tr:not(:first-child) {
+
+    th,
+    td {
+      border-top: var(--border-size) solid var(--border-color);
+    }
+  }
+
+  p+p {
+    margin-top: 1rem;
+  }
+}
+
+.back {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url('../images/icon-goback.png') no-repeat 0 0;
+  background-size: contain;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 9;
+}
+
+@media (min-width: 640px) {
+  .gameListPage {
+    --border-size: 2px;
+
+    .list-board {
+      flex-direction: row;
+      border-radius: 0;
+    }
+
+    .list-logo {
+      width: calc(100% / 3);
+      padding: 3rem 1.5rem;
+      border-right: var(--border-size) solid var(--border-color);
+      border-bottom: 0;
+      justify-content: flex-start;
+
+      img {
+        width: 90%;
+      }
+
+      a {
+        width: 70%;
+        margin-top: 1rem;
+      }
+    }
+
+    .list-deco {
+      display: block;
+    }
+  }
+}

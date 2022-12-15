@@ -6,6 +6,7 @@
   --primary: #F5EEDE;
   --red: #C7402C;
   --darkred: #860005;
+  --bg-color: #BB272D;
 }
 
 html,
@@ -75,7 +76,7 @@ header .banner {
   position: relative;
   z-index: 2;
 }
-header .banner-kv {
+header .banner #lottie-banner {
   width: calc(100% + var(--gutter));
   position: relative;
   left: 50%;
@@ -213,7 +214,7 @@ header .banner-title {
     padding-bottom: calc(var(--gutter) * 2);
     border-radius: calc(var(--gutter) * 2);
   }
-  header .banner-kv {
+  header .banner #lottie-banner {
     width: calc(100% + var(--gutter) * 2);
   }
   header .banner-title {
@@ -584,12 +585,16 @@ main .shadow::after {
 .store-2 .main-info > div {
   width: 60%;
 }
-.store-2 .main-info .info-img {
+.store-2 .main-info .info-img,
+.store-2 .main-info .svgConteiner {
   width: 70%;
   margin: 0 auto;
 }
 .store-2 .info1 .shadow::after {
   transform: translate(30%, -60%);
+}
+.store-2 .info1 .svgConteiner svg {
+  transform: translateY(5px) !important;
 }
 .store-2 .info2 .info-img {
   margin: 0 0 0 auto;
@@ -622,7 +627,8 @@ main .shadow::after {
     transform: translate(20%, -40%);
     margin-bottom: -40%;
   }
-  .store-2 .info1 .info-img {
+  .store-2 .info1 .info-img,
+  .store-2 .info1 .svgConteiner {
     margin: 0 0 0 auto;
   }
   .store-2 .info2 {
@@ -650,6 +656,9 @@ main .shadow::after {
   }
   .store-2 .main-info > div {
     width: 40%;
+  }
+  .store-2 .svgConteiner svg {
+    transform: translateY(8px) !important;
   }
   .store-2 .cloud span:nth-child(1) {
     left: -10%;
@@ -835,7 +844,7 @@ main .shadow::after {
   60% {
     opacity: 1;
     transform: translate(0, -20px) scaleY(0.9);
-    margin-top: 6%;
+    margin-top: 5%;
   }
   75% {
     transform: translate(0, 10px) scaleY(0.95);
@@ -848,7 +857,7 @@ main .shadow::after {
   }
 }
 footer {
-  background: url("../images/ico-dot.png") repeat-x 0 0;
+  background: white url("../images/ico-dot.png") repeat-x 0 0;
   background-size: 20px auto;
   text-align: center;
   padding: var(--gutter);
@@ -962,4 +971,203 @@ footer p {
 }
 .dialog[id^=shop] .content > p {
   color: white;
+}
+
+:root {
+  --border-color: white;
+  --border-size: 1px;
+  --deco-size: calc(var(--gutter) * 1.75);
+  --bg-color: #C3402C;
+}
+
+.searchBar {
+  overflow: hidden;
+  max-width: 1280px;
+  margin: var(--gutter) auto 0;
+  position: relative;
+  font-size: 1rem;
+  border-radius: 50px;
+  border: 3px solid #BB272D;
+}
+.searchBar label {
+  background: white;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  width: calc(100% - 2rem);
+}
+.searchBar span {
+  white-space: nowrap;
+  display: block;
+  font-weight: 500;
+}
+.searchBar input {
+  width: 100%;
+  outline: 0;
+  border: 0;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.gameListPage header {
+  padding-bottom: var(--gutter);
+}
+
+.gameListPage main {
+  background: var(--red);
+  color: white;
+  padding-bottom: calc(var(--gutter) * 2);
+}
+.gameListPage main h3 {
+  text-align: center;
+  font-weight: 400;
+  margin: 0 auto;
+  padding: calc(var(--gutter) * 2) var(--gutter);
+}
+.gameListPage main section {
+  max-width: calc(1200px - var(--gutter) * 2);
+  padding: 0 var(--gutter);
+}
+.gameListPage main section + section {
+  margin-top: 2rem;
+}
+
+.gameListPage .gameList {
+  min-height: 30vh;
+}
+.gameListPage .list-board {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--darkred);
+  border: var(--border-size) solid var(--border-color);
+  border-radius: calc(var(--gutter) * 0.5);
+}
+.gameListPage .list-deco {
+  position: absolute;
+  top: calc(var(--border-size) * -1);
+  left: calc(var(--border-size) * -1);
+  width: calc(100% + var(--border-size) * 2);
+  height: var(--deco-size);
+  overflow: hidden;
+  z-index: 1;
+  display: none;
+}
+.gameListPage .list-deco::before, .gameListPage .list-deco::after {
+  content: "";
+  display: block;
+  width: var(--deco-size);
+  height: var(--deco-size);
+  border: 2px solid var(--border-color);
+  background: var(--bg-color);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+}
+.gameListPage .list-deco::before {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+.gameListPage .list-deco::after {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+.gameListPage .list-deco ~ .list-deco {
+  bottom: calc(var(--border-size) * -1);
+  top: auto;
+  transform: scaleY(-1);
+}
+.gameListPage .list-logo {
+  padding: 1rem 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+  border-bottom: var(--border-size) solid var(--border-color);
+}
+.gameListPage .list-logo img {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.gameListPage .list-logo a {
+  width: 80%;
+  height: 2rem;
+  background: url("../images/btn-link.png") no-repeat center top;
+  background-size: contain;
+}
+.gameListPage table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.gameListPage table a {
+  display: inline-block;
+  text-decoration: underline;
+  color: #E6B45A;
+  margin: 0 0.25rem;
+  font-weight: 500;
+}
+.gameListPage th,
+.gameListPage td {
+  padding: 1rem 0.5rem;
+  vertical-align: top;
+  color: white;
+  font-weight: 400;
+}
+.gameListPage th {
+  white-space: nowrap;
+  width: 20%;
+  border-right: var(--border-size) solid var(--border-color);
+}
+.gameListPage tr:not(:first-child) th,
+.gameListPage tr:not(:first-child) td {
+  border-top: var(--border-size) solid var(--border-color);
+}
+.gameListPage p + p {
+  margin-top: 1rem;
+}
+
+.back {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url("../images/icon-goback.png") no-repeat 0 0;
+  background-size: contain;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 9;
+}
+
+@media (min-width: 640px) {
+  .gameListPage {
+    --border-size: 2px;
+  }
+  .gameListPage .list-board {
+    flex-direction: row;
+    border-radius: 0;
+  }
+  .gameListPage .list-logo {
+    width: 33.3333333333%;
+    padding: 3rem 1.5rem;
+    border-right: var(--border-size) solid var(--border-color);
+    border-bottom: 0;
+    justify-content: flex-start;
+  }
+  .gameListPage .list-logo img {
+    width: 90%;
+  }
+  .gameListPage .list-logo a {
+    width: 70%;
+    margin-top: 1rem;
+  }
+  .gameListPage .list-deco {
+    display: block;
+  }
 }
