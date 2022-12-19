@@ -20,13 +20,22 @@ nav {
     padding: 0 var(--gutter);
   }
 
-  a {
+  a,
+  span {
     color: var(--primary);
     font-size: 1.25rem;
     font-weight: 800;
     background: var(--red);
     padding: 0.5rem 0.5rem;
     border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover,
+    &.active {
+      background-color: var(--darkred);
+      color: white;
+    }
   }
 }
 

@@ -105,6 +105,13 @@ main {
   &-footer {
     transform: scaleY(-1);
   }
+
+  a {
+    display: inline-block;
+    margin: 0 2px;
+    color: inherit;
+    text-decoration: underline;
+  }
 }
 
 .main-info {

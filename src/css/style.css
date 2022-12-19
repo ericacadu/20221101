@@ -307,13 +307,22 @@ nav ul {
   align-items: center;
   padding: 0 var(--gutter);
 }
-nav a {
+nav a,
+nav span {
   color: var(--primary);
   font-size: 1.25rem;
   font-weight: 800;
   background: var(--red);
   padding: 0.5rem 0.5rem;
   border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+nav a:hover, nav a.active,
+nav span:hover,
+nav span.active {
+  background-color: var(--darkred);
+  color: white;
 }
 
 @media (min-width: 720px) {
@@ -415,6 +424,12 @@ main .shadow::after {
 }
 .note-footer {
   transform: scaleY(-1);
+}
+.note a {
+  display: inline-block;
+  margin: 0 2px;
+  color: inherit;
+  text-decoration: underline;
 }
 
 .main-info {
@@ -911,6 +926,14 @@ footer p {
   position: absolute;
   left: 0;
   top: 0;
+}
+.dialog ul a {
+  display: inline-block;
+  margin: 0 2px;
+  text-decoration: underline;
+  color: inherit;
+  outline: 0 !important;
+  color: var(--darkred);
 }
 .dialog table {
   border-collapse: collapse;

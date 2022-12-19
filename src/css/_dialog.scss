@@ -38,6 +38,15 @@
         top: 0;
       }
     }
+
+    a {
+      display: inline-block;
+      margin: 0 2px;
+      text-decoration: underline;
+      color: inherit;
+      outline: 0 !important;
+      color: var(--darkred);
+    }
   }
 
   table {

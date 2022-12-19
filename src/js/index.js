@@ -1,6 +1,6 @@
 const $ = (e) => document.querySelector(e);
 const lanterns = document.querySelectorAll(".shop span");
-const links = document.querySelectorAll("a[hash-target]");
+const links = document.querySelectorAll("span[hash-target]");
 
 lanterns.forEach((item) => {
   item.addEventListener("mouseover", function () {
@@ -31,6 +31,9 @@ links.forEach((link) => {
     const target = $(link.getAttribute("hash-target"));
     const navHeight = $("nav").offsetHeight;
     const distance = target.offsetTop - navHeight;
+
+    links.forEach((item) => item.classList.remove("active"));
+    link.classList.add("active");
 
     window.scroll({
       top: distance,
