@@ -107,8 +107,6 @@ main {
   }
 
   a {
-    display: inline-block;
-    margin: 0 2px;
     color: inherit;
     text-decoration: underline;
   }
@@ -157,7 +155,14 @@ main {
     }
   }
 
+  .note {
+    a {
+      display: inline-block;
+    }
+  }
+
 }
+
 
 @keyframes swing {
   20% {

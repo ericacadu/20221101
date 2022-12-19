@@ -427,8 +427,6 @@ main .shadow::after {
   transform: scaleY(-1);
 }
 .note a {
-  display: inline-block;
-  margin: 0 2px;
   color: inherit;
   text-decoration: underline;
 }
@@ -467,6 +465,9 @@ main .shadow::after {
   .main-info > div:not(.fireworks) {
     width: 40%;
     margin-bottom: calc(var(--gutter) * 2);
+  }
+  .note a {
+    display: inline-block;
   }
 }
 @keyframes swing {
